@@ -106,3 +106,29 @@ h2 {
     text-align: center;
   }
 }
+
+@media (max-width: 575.98px) {
+  .card {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .card,
+  h5 {
+    font-size: 20px;
+  }
+
+  .card,
+  p {
+    font-size: 10px;
+  }
+
+  .media-q-sunSet h5 {
+    display: none;
+  }
+
+  .media-q-temperature,
+  b {
+    display: none;
+  }
+}

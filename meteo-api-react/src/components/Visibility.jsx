@@ -2,7 +2,7 @@ import React from 'react';
 
 const HumidityCard = ({ visibility }) => {
     return (
-        <div className="col-lg-4 col-md-4 col-sm-6">
+        <div className="col-lg-4 col-md-4 col-sm-6 col-6">
             <div className="card">
                 <div className="card-body d-flex flex-column justify-content-center align-items-center text-center" >
                     <img src="imgs/Icons8-visibilita-40.jpg" className="icon" alt="visibilità" />

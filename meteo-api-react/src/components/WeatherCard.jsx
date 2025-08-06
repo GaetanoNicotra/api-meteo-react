@@ -27,7 +27,7 @@ const WeatherCard = () => {
     useEffect(() => {
         if (!findCity) return
         axios
-            .get(`https://api.openweathermap.org/data/2.5/weather?lat=${findCity.lat}&lon=${findCity.long}&${apikey}& units= metric`)
+            .get(`https://api.openweathermap.org/data/2.5/weather?lat=${findCity.lat}&lon=${findCity.long}&${apikey}&units=metric`)
             .then(resp => setMeteo(resp.data))
             .catch(err => console.error("Errore nel caricamento:", err))
     }, [selectedCity])
@@ -39,7 +39,7 @@ const WeatherCard = () => {
             {meteo && meteo.main ? (
                 <div className="container">
                     <h2>Benvenuto, ecco il meteo di oggi a {meteo.name}</h2>
-                    <select name="citta" id="city" value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
+                    <select className='mb-3' name="citta" id="city" value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
                         {coordinate.map((c) => {
                             return <option key={c.id}> {c.id} </option>
                         })}

@@ -3,7 +3,7 @@ import React from 'react'
 const SeaLevel = ({ sea }) => {
     return (
         <>
-            <div className="col-lg-4 col-md-4 col-sm-6">
+            <div className="col-lg-4 col-md-4 col-sm-6 col-6">
                 <div className="card mb-4">
                     <div className="card-body d-flex flex-column justify-content-center align-items-center text-center" >
                         <img src="imgs/icons8-barometro-48.png" className="icon-2" alt="pressione" />
