@@ -1,0 +1,108 @@
+/* BODY */
+body {
+  background-color: rgba(46, 137, 165, 0.842);
+  font-family: Roboto;
+}
+
+/* HEADER */
+.bg-body-my {
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.title-header {
+  color: white;
+  font-size: 50px;
+  margin: 0 auto;
+  box-shadow: 0 10px 10px rgba(53, 53, 53, 0.3);
+  padding: 20px 80px;
+  border-radius: 18px;
+  background-color: #ffffff50;
+}
+
+/* INFO LUOGO */
+.info {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: #ffffff;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+/* CARD */
+.card {
+  height: 280px;
+  text-align: center;
+  box-shadow: 0 10px 10px rgba(53, 53, 53, 0.3);
+  border-radius: 20px;
+
+}
+
+.card-body p {
+  font-size: 23px;
+  font-family: Bricolage Grotesque;
+}
+
+/* ICONE */
+.icon {
+  width: 55px;
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.icon-2 {
+  width: 68px;
+  margin-bottom: 20px;
+}
+
+.icon-3 {
+  width: 30px;
+}
+
+/* SELECT */
+select {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+select:focus {
+  border-color: #F9BB00;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(77, 163, 255, 0.3);
+}
+
+/* UTILITY */
+h5 {
+  font-size: 30px;
+}
+
+h2 {
+  color: white;
+}
+
+/* MEDIA QUERY */
+
+@media (max-width: 550px) {
+  .title-header {
+    padding: 23px;
+  }
+}
+
+@media (max-width: 430px) {
+  .title-header {
+    padding: 18px;
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 575px) {
+  .card {
+    width: 70%;
+    text-align: center;
+  }
+}
