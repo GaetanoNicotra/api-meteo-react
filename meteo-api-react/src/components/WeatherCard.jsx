@@ -27,14 +27,14 @@ const WeatherCard = () => {
     useEffect(() => {
         if (!findCity) return
         axios
-            .get(`https://api.openweathermap.org/data/2.5/weather?lat=${findCity.lat}&lon=${findCity.long}&${apikey}&units=metric`)
+            .get(`https://api.openweathermap.org/data/2.5/weather?lat=${findCity.lat}&lon=${findCity.long}&${apikey}&units=metric&lang=it`)
             .then(resp => setMeteo(resp.data))
             .catch(err => console.error("Errore nel caricamento:", err))
     }, [selectedCity])
 
     return (
         <>
-            <Header name={meteo.name} />
+            <Header name={findCity?.id} />
 
             {meteo && meteo.main ? (
                 <div className="container">
@@ -47,7 +47,15 @@ const WeatherCard = () => {
                     <div className="row mb-5">
                         <div className='d-flex justify-content-end align-items-center'>
                             <span className='info'>
-                                <div>{meteo.weather[0].description}</div>
+                                <div className='d-flex align-items-center gap-2'>
+                                    <img
+                                        src={`https://openweathermap.org/img/wn/${meteo.weather[0].icon}@2x.png`}
+                                        alt={meteo.weather[0].description}
+                                        width={50}
+                                        height={50}
+                                    />
+                                    <span>{meteo.weather[0].description}</span>
+                                </div>
                                 Latitudine: {meteo.coord.lat.toFixed(1)}° | Longitudine: {meteo.coord.lon.toFixed(1)}°
                             </span>
                         </div>
