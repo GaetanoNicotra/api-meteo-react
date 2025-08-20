@@ -68,7 +68,7 @@ const WeatherCard = () => {
                     </div>
                 </div>
             ) : (
-                "Caricamento..."
+                <span class="loader"></span>
             )}
         </>
     )

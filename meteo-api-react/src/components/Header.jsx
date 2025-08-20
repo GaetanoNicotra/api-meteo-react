@@ -5,7 +5,7 @@ const Header = ({ name, coord }) => {
         <>
             <nav className="navbar bg-body-my">
                 <div className="container-md">
-                    <p className="title-header">Meteo {name}</p>
+                    <p className="title-header"><i class="fa-solid fa-location-dot"></i>Meteo {name}</p>
                     <span>{coord}</span>
                 </div>
             </nav>
