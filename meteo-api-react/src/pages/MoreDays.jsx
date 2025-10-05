@@ -41,7 +41,7 @@ const MoreDays = () => {
 
             {moreDays && moreDays.length > 0 ? (
                 <div className="container">
-                    <h2>Previsioni meteo dal {moreDays.dt}</h2>
+                    <h2>Previsioni meteo dal</h2>
                     <select className='mb-3' name="citta" id="city" value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
                         {coordinate.map((c) => {
                             return <option key={c.id}> {c.id} </option>
@@ -51,12 +51,30 @@ const MoreDays = () => {
                     <div className="row">
                         {moreDays.map((m, index) => {
                             return (
-                                <ul key={index} className='card-days'>
-                                    <li>{m.dt_txt.slice(0, 10)}</li>
-                                    <li>{m.weather[0].description}</li>
-                                    <li> Max {m.main.temp_min}° - Min {m.main.temp_max}° | Umidità: {m.main.humidity} %</li>
-                                    <li>{m.dt_txt.slice(10, 16)}</li>
-                                </ul>
+                                <>
+                                    <div className='d-flex'>
+                                        <ul key={index} className='card-days'>
+                                            <img
+                                                src={`https://openweathermap.org/img/wn/${m.weather[0].icon}@2x.png`} />
+                                            <li>{m.weather[0].description.toUpperCase()}</li>
+                                            <li> Max {m.main.temp_min.toFixed(1)}° - Min {m.main.temp_max.toFixed(1)}° | Umidità: {m.main.humidity} %</li>
+
+                                            <li><details>
+                                                <summary>Altre informazioni</summary>
+                                                <p>Ci saranno: {m.main.temp}° e percepiti: {m.main.feels_like.toFixed(1)}°</p>
+                                                <p>Vento: {m.wind.speed} km/h</p>
+                                                <p>Visibilità {m.visibility / 1000} km</p>
+                                                <p>Pressione: {m.main.pressure} mb</p>
+                                            </details>
+                                            </li>
+                                        </ul>
+
+                                        <div className='card-days date-days'>
+                                            <p>📆 {m.dt_txt.slice(0, 10)}</p>
+                                            <p>🕑 {m.dt_txt.slice(10, 16)}</p>
+                                        </div >
+                                    </div>
+                                </>
                             )
                         })}
                     </div >
