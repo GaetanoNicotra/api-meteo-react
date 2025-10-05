@@ -46,6 +46,13 @@ body {
   font-family: Bricolage Grotesque;
 }
 
+/* CARD DAYS */
+.card-days {
+  background-color: #333;
+  color: white;
+  border-radius: 8px;
+}
+
 /* ICONE */
 .icon {
   width: 55px;
@@ -123,8 +130,14 @@ h2 {
   }
 }
 
-/* MEDIA QUERY */
+/* FOOTER */
+.info-footer,
+li {
+  list-style-type: none
+}
 
+
+/* MEDIA QUERY */
 @media (max-width: 550px) {
   .title-header {
     padding: 23px;

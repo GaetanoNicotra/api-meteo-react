@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import cityCoordinates from '../data/coordinate'
 import TemperatureCard from './TemperatureCard'
 import SunsetSunrise from './SunsetSunrise'
@@ -6,6 +7,7 @@ import HumidityCard from './HumidityCard'
 import Visibibility from './Visibility'
 import SeaLevel from './SeaLevel'
 import Header from './Header'
+import Footer from './Footer'
 import Wind from './Wind'
 import axios from 'axios'
 
@@ -20,10 +22,7 @@ const WeatherCard = () => {
 
     const [selectedCity, setSelectedCity] = useState('Catania')
 
-    // funzione per trovare la città cercata
-    const findCity = coordinate.find(city => city.id === selectedCity)
-
-    // recupera il meteo ogni volta che cambia la città
+    // funzione per recuperare il meteo ogni volta che cambia la città
     useEffect(() => {
         if (!findCity) return
         axios
@@ -31,6 +30,9 @@ const WeatherCard = () => {
             .then(resp => setMeteo(resp.data))
             .catch(err => console.error("Errore nel caricamento:", err))
     }, [selectedCity])
+
+    // funzione per trovare la città cercata
+    const findCity = coordinate.find(city => city.id === selectedCity)
 
     return (
         <>
@@ -66,10 +68,12 @@ const WeatherCard = () => {
                         <SeaLevel sea={meteo.main.sea_level} />
                         <Visibibility visibility={meteo.visibility} />
                     </div>
+                    <Link className='text-white' to='/moredays'>vai a più giorni</Link>
                 </div>
             ) : (
-                <span class="loader"></span>
+                <span className="loader"></span>
             )}
+            <Footer />
         </>
     )
 }
