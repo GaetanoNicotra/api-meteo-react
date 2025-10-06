@@ -43,7 +43,7 @@ const WeatherCard = () => {
 
             {meteo && meteo.main ? (
                 <div className="container">
-                    <h2>Benvenuto, ecco il meteo di oggi a {meteo.name}📍</h2>
+                    <h2>Benvenuto, ecco il meteo di oggi a {meteo.name}</h2>
                     <select className='mb-3' name="citta" id="city" value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
                         {coordinate.map((c) => {
                             return <option key={c.id}> {c.id} </option>

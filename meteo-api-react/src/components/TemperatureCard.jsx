@@ -14,7 +14,7 @@ const TemperatureCard = ({ temp }) => {
                                 <b>min</b> {temp.temp_min.toFixed(1)}° | <b>max</b> {temp.temp_max.toFixed(1)}°
                                 <img className="icon-3" src="imgs/icons8-thermometer-up-50.png" alt="temp-min" /></div>
                         </p>
-                        <p className="card-text"><b>percepita</b>: {temp.feels_like.toFixed(1)}°</p>
+                        <p className="card-text"><strong>percepita</strong>: {temp.feels_like.toFixed(1)}°</p>
                     </div>
                 </div >
             </div >

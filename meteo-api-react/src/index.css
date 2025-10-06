@@ -40,7 +40,7 @@ body {
   text-align: center;
   box-shadow: 0 10px 10px rgba(53, 53, 53, 0.3);
   border-radius: 20px;
-  background-color: #ffffffea;
+  background-color: #ffffffe1;
 }
 
 .card-body p {
@@ -55,6 +55,7 @@ body {
   border-radius: 8px;
   padding: 15px 30px;
   padding-right: 150px;
+  width: 35%;
 }
 
 .date-days {
@@ -64,6 +65,12 @@ body {
   padding: 20px 40px;
   font-size: 17px;
   background-color: #ffffffd3;
+  width: 20%;
+  border-radius: 8px;
+}
+
+li {
+  font-family: Bricolage Grotesque;
 }
 
 /* ICONE */
@@ -151,10 +158,36 @@ li {
 
 
 /* MEDIA QUERY */
+
+@media (min-width: 890) and (max-width: 90px) {
+  .card-days {
+    width: 80%;
+  }
+
+}
+
+/* tablet */
+@media (min-width: 580px) and (max-width: 800px) {
+  .card-days {
+    width: 80%;
+  }
+
+  .card-days-bottom {
+    padding: 8px;
+    width: 30%;
+  }
+
+  .media-q-sunSet h5 {
+    display: none;
+  }
+}
+
 @media (max-width: 550px) {
   .title-header {
     padding: 23px;
   }
+
+
 }
 
 @media (max-width: 430px) {
@@ -169,6 +202,8 @@ li {
     width: 70%;
     text-align: center;
   }
+
+
 }
 
 @media (max-width: 575.98px) {
@@ -185,6 +220,33 @@ li {
   .card,
   p {
     font-size: 10px;
+  }
+
+  .card-days {
+    width: 80%;
+    font-size: 14px;
+    padding-right: 80px;
+  }
+
+  .card-days-bottom {
+    padding: 8px;
+    width: 30%;
+  }
+
+  li p {
+    font-size: 15px;
+  }
+
+  ul li {
+    font-size: 15px;
+  }
+
+  .date-days p {
+    font-size: 15px;
+  }
+
+  .media-q-icon {
+    display: none;
   }
 
   .media-q-sunSet h5 {
