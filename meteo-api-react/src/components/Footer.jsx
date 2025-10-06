@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Footer = () => {
+const Footer = ({ lat, long, name }) => {
     return (
         <footer className="bg-dark text-white py-4">
             <div className="container">
@@ -25,6 +25,7 @@ const Footer = () => {
                 <div className="text-center text-secondary small">
                     <div>LiveMeteo © 2025 - 2025</div>
                     <div>Tutti i diritti sono riservati</div>
+                    <p className='mt-3'>{name}: Latitudine: {lat.toFixed(1)}° | Longitudine: {long.toFixed(1)}°</p>
                 </div>
             </div>
         </footer>

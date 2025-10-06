@@ -31,7 +31,7 @@ const MoreDays = () => {
         }
         getMoreDays();
     }, [selectedCity])
-    console.log(moreDays)
+
     // funzione per trovare la città cercata
     const findCity = coordinate.find(city => city.id === selectedCity)
 
@@ -41,7 +41,12 @@ const MoreDays = () => {
 
             {moreDays && moreDays.length > 0 ? (
                 <div className="container">
-                    <h2>Previsioni meteo dal</h2>
+                    <h2>
+                        Previsioni meteo dal{' '}
+                        {moreDays[0].dt_txt.slice(0, 10).split('-').reverse().join('-')} al{' '}
+                        {moreDays[moreDays.length - 1].dt_txt.slice(0, 10).split('-').reverse().join('-')}
+                    </h2>
+
                     <select className='mb-3' name="citta" id="city" value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
                         {coordinate.map((c) => {
                             return <option key={c.id}> {c.id} </option>
@@ -70,7 +75,7 @@ const MoreDays = () => {
                                         </ul>
 
                                         <div className='card-days date-days'>
-                                            <p>📆 {m.dt_txt.slice(0, 10)}</p>
+                                            <p>📆 {m.dt_txt.slice(0, 10).split('-').reverse().join('-')}</p>
                                             <p>🕑 {m.dt_txt.slice(10, 16)}</p>
                                         </div >
                                     </div>

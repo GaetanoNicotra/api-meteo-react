@@ -58,7 +58,6 @@ const WeatherCard = () => {
                                     />
                                     <span>{meteo.weather[0].description}</span>
                                 </div>
-                                Latitudine: {meteo.coord.lat.toFixed(1)}° | Longitudine: {meteo.coord.lon.toFixed(1)}°
                             </span>
                         </div>
                         <TemperatureCard temp={meteo.main} />
@@ -68,12 +67,16 @@ const WeatherCard = () => {
                         <SeaLevel sea={meteo.main.sea_level} />
                         <Visibibility visibility={meteo.visibility} />
                     </div>
-                    <Link className='text-white' to='/moredays'>vai a più giorni</Link>
+                    <Link className='text-white' to='/moredays'><h4 className='pb-3'>Vai a più giorni</h4></Link>
                 </div>
             ) : (
                 <span className="loader"></span>
             )}
-            <Footer />
+            {meteo && meteo.main ? (
+                <Footer lat={meteo.coord.lat} long={meteo.coord.lon} name={meteo.name} />
+            ) : (
+                <span className="loader"></span>
+            )}
         </>
     )
 }
