@@ -8,7 +8,7 @@ const Footer = ({ lat, long, name }) => {
                 <div className="row justify-content-center">
                     <div className="col-12 col-md-6 d-flex justify-content-center mb-3 mb-md-0">
                         <ul className="list-unstyled d-flex gap-4 mb-0 align-items-center">
-                            <li className="d-flex align-items-center gap-2">Twitte</li>
+                            <li className="d-flex align-items-center gap-2">Twitter</li>
                             <li className="d-flex align-items-center gap-2">Facebook</li>
                             <li className="d-flex align-items-center gap-2">Instagram</li>
                         </ul>

@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from '../components/Header'
-import Footer from '../components/Footer'
 import { useEffect, useState } from 'react'
 import cityCoordinates from '../data/coordinate'
 
@@ -31,23 +30,23 @@ const MoreDays = () => {
         }
         getMoreDays();
     }, [selectedCity])
-
+    console.log(moreDays)
     // funzione per trovare la città cercata
     const findCity = coordinate.find(city => city.id === selectedCity)
 
     return (
         <>
-            <Header name={findCity?.id} />
+            <Header />
 
             {moreDays && moreDays.length > 0 ? (
                 <div className="container">
-                    <h2>
+                    <h2 className='mt-5'>
                         Previsioni meteo dal{' '}
-                        {moreDays[0].dt_txt.slice(0, 10).split('-').reverse().join('-')} al{' '}
-                        {moreDays[moreDays.length - 1].dt_txt.slice(0, 10).split('-').reverse().join('-')}
+                        <span className='text-decoration-underline'>{moreDays[0].dt_txt.slice(0, 10).split('-').reverse().join('-')}</span> al{' '}
+                        <span className='text-decoration-underline'> {moreDays[moreDays.length - 1].dt_txt.slice(0, 10).split('-').reverse().join('-')}</span>
                     </h2>
 
-                    <select className='mb-3' name="citta" id="city" value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
+                    <select className='mb-5' name="citta" id="city" value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
                         {coordinate.map((c) => {
                             return <option key={c.id}> {c.id} </option>
                         })}
@@ -65,8 +64,8 @@ const MoreDays = () => {
                                             <li> Max {m.main.temp_min.toFixed(1)}° - Min {m.main.temp_max.toFixed(1)}° | Umidità: {m.main.humidity} %</li>
 
                                             <li><details>
-                                                <summary>Altre informazioni</summary>
-                                                <p>Ci saranno: {m.main.temp}° e percepiti: {m.main.feels_like.toFixed(1)}°</p>
+                                                <summary className='mb-2'>Altre informazioni</summary>
+                                                <p>Ci saranno: {m.main.temp.toFixed(1)}° e percepiti: {m.main.feels_like.toFixed(1)}°</p>
                                                 <p>Vento: {m.wind.speed} km/h</p>
                                                 <p>Visibilità {m.visibility / 1000} km</p>
                                                 <p>Pressione: {m.main.pressure} mb</p>
@@ -89,7 +88,32 @@ const MoreDays = () => {
                 <span className="loader"></span>
             )}
 
-            <Footer />
+            <footer className="bg-dark text-white py-4">
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-12 col-md-6 d-flex justify-content-center mb-3 mb-md-0">
+                            <ul className="list-unstyled d-flex gap-4 mb-0 align-items-center">
+                                <li className="d-flex align-items-center gap-2">Twitter</li>
+                                <li className="d-flex align-items-center gap-2">Facebook</li>
+                                <li className="d-flex align-items-center gap-2">Instagram</li>
+                            </ul>
+                        </div>
+                        <div className="col-12 col-md-6 d-flex justify-content-center">
+                            <ul className="list-unstyled d-flex gap-4 mb-0">
+                                <li>Contattaci</li>
+                                <li>Info</li>
+                                <li>Su di noi</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr className="border-secondary my-4" />
+                    <div className="text-center text-secondary small">
+                        <div>LiveMeteo © 2025 - 2025</div>
+                        <div>Tutti i diritti sono riservati</div>
+                    </div>
+                </div>
+            </footer>
+
         </>
     )
 }

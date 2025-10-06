@@ -1,5 +1,60 @@
 const cityCoordinates = [
     {
+        id: 'Messina',
+        lat: 38.1938,
+        long: 15.5540
+    },
+    {
+        id: 'Siracusa',
+        lat: 37.0755,
+        long: 15.2866
+    },
+    {
+        id: 'Trapani',
+        lat: 38.0176,
+        long: 12.5364
+    },
+    {
+        id: 'Ragusa',
+        lat: 36.9269,
+        long: 14.7255
+    },
+    {
+        id: 'Agrigento',
+        lat: 37.3111,
+        long: 13.5765
+    },
+    {
+        id: 'Augusta',
+        lat: 37.2334,
+        long: 15.2231
+    },
+    {
+        id: 'Agnone Bagni',
+        lat: 37.3206,
+        long: 15.0402
+    },
+    {
+        id: 'Brucoli',
+        lat: 37.2775,
+        long: 15.1876
+    },
+    {
+        id: 'Misterbianco',
+        lat: 37.5156,
+        long: 15.0113
+    },
+    {
+        id: 'Riesi',
+        lat: 37.2812,
+        long: 14.0809
+    },
+    {
+        id: 'Enna',
+        lat: 37.5670,
+        long: 14.2790
+    },
+    {
         id: 'Bari',
         lat: 41.1171,
         long: 16.8719

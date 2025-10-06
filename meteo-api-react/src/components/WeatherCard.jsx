@@ -16,10 +16,13 @@ const WeatherCard = () => {
     // API KEY
     const apikey = import.meta.env.VITE_API_KEY
 
+    // variabile che contiene tutti i dati meteo
     const [meteo, setMeteo] = useState({})
 
+    // variabile che contine le coordinate
     const [coordinate] = useState(cityCoordinates)
 
+    // variabile per le città della select
     const [selectedCity, setSelectedCity] = useState('Catania')
 
     // funzione per recuperare il meteo ogni volta che cambia la città
@@ -36,28 +39,31 @@ const WeatherCard = () => {
 
     return (
         <>
-            <Header name={findCity?.id} />
+            <Header />
 
             {meteo && meteo.main ? (
                 <div className="container">
-                    <h2>Benvenuto, ecco il meteo di oggi a {meteo.name}</h2>
+                    <h2>Benvenuto, ecco il meteo di oggi a {meteo.name}📍</h2>
                     <select className='mb-3' name="citta" id="city" value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
                         {coordinate.map((c) => {
                             return <option key={c.id}> {c.id} </option>
                         })}
                     </select>
+
                     <div className="row mb-5">
                         <div className='d-flex justify-content-end align-items-center'>
                             <span className='info'>
-                                <div className='d-flex align-items-center gap-2'>
+                                <div className=' align-items-center gap-2 d-flex'>
+                                    <p className='fs-2'>{meteo.main.temp.toFixed(1)}°</p>
                                     <img
                                         src={`https://openweathermap.org/img/wn/${meteo.weather[0].icon}@2x.png`}
                                         alt={meteo.weather[0].description}
                                         width={50}
                                         height={50}
+                                        className='mb-3'
                                     />
-                                    <span>{meteo.weather[0].description}</span>
                                 </div>
+                                <div className='mt-4'>{meteo.weather[0].description}</div>
                             </span>
                         </div>
                         <TemperatureCard temp={meteo.main} />
