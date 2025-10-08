@@ -6,16 +6,16 @@ Un'applicazione web moderna per visualizzare in tempo reale le condizioni meteor
 ---
 
 ## 📝 Panoramica  
-**Live Meteo** è un'app sviluppata con **React** che fornisce un quadro dettagliato del meteo attuale.  
+**Live Meteo** è un'app sviluppata con **React** che fornisce un quadro dettagliato del meteo attuale e quello dei successivi 5 giorni con aggiornamenti temporali ogni 8 ore.
 Progettata con un'**architettura a componenti** e un'interfaccia utente basata su **Bootstrap**, l'app offre un'esperienza semplice e intuitiva.  
 La selezione della città avviene tramite un **menu a tendina** che permette di esplorare le condizioni delle principali città italiane.
-L'app è ancora in fase di sviluppo, nelle prossime release verrà implementata una panoramica più ampia sulle informazioni metereologiche per i giorni successivi.
 
 ---
 
 ## ✨ Funzionalità  
 L'app fornisce le seguenti informazioni meteo in tempo reale:
 
+- **Dati meteo su 5 giorni con aggiornamenti temporali ogni 3 ore**
 - **Dettagli sulla Temperatura:**
   - Temperatura attuale.
   - Temperatura massima e minima.
@@ -64,7 +64,7 @@ A modern and responsive web application for displaying real-time weather conditi
 ---
 
 ## 📝 Overview  
-**Live Meteo** is a **React** app that provides a detailed overview of the current weather.  
+**Live Meteo** is a **React** app that provides a detailed overview of the current weather and of the next 5 days with time updates every 8 hours.
 Designed with a **component-based architecture** and a **Bootstrap UI**, the app offers a simple and intuitive user experience.  
 The city selection is made via a convenient **dropdown menu** that fetches data from a local dataset, allowing users to explore the conditions of a wide selection of Italian cities.
 

@@ -186,8 +186,6 @@ li {
   .title-header {
     padding: 23px;
   }
-
-
 }
 
 @media (max-width: 430px) {
@@ -202,7 +200,6 @@ li {
     width: 70%;
     text-align: center;
   }
-
 
 }
 
